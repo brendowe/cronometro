@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Cronômetro online simples e rápido para iniciar, pausar e reiniciar diretamente no navegador."
+    />
+    <meta
+      name="robots"
+      content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+    />
+    <meta name="application-name" content="Cronômetro Online" />
+    <meta name="theme-color" content="#0f172a" />
+    <title>Cronômetro Online Simples | Iniciar, Pausar e Reiniciar</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta
+      property="og:title"
+      content="Cronômetro Online Simples | Iniciar, Pausar e Reiniciar"
+    />
+    <meta
+      property="og:description"
+      content="Cronômetro online simples e rápido para iniciar, pausar e reiniciar diretamente no navegador."
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Cronômetro Online Simples | Iniciar, Pausar e Reiniciar"
+    />
+    <meta
+      name="twitter:description"
+      content="Cronômetro online simples e rápido para iniciar, pausar e reiniciar diretamente no navegador."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Cronômetro Online",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Web",
+        "description": "Cronômetro online simples e rápido para iniciar, pausar e reiniciar diretamente no navegador."
+      }
+    </script>
+  </head>
+  <body>
+    <h1 class="site-title">Cronometro Online</h1>
+
+    <main class="app" aria-label="Cronômetro online">
+      <section class="timer-card">
+        <div class="timer-display" aria-live="polite" aria-atomic="true">
+          <span id="minutes">00</span>
+          <span class="timer-display__separator">:</span>
+          <span id="seconds">00</span>
+          <span class="timer-display__separator">.</span>
+          <span id="milliseconds">00</span>
+        </div>
+
+        <div class="controls">
+          <button class="btn btn--primary" id="startButton" type="button">
+            Iniciar
+          </button>
+          <button
+            class="btn btn--secondary"
+            id="pauseButton"
+            type="button"
+            disabled
+          >
+            Pausar
+          </button>
+          <button class="btn btn--ghost" id="resetButton" type="button">
+            Reiniciar
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/stopwatch.js" defer></script>
+    <script src="js/app.js" defer></script>
+  </body>
+</html>
