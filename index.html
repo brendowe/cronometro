@@ -1,17 +1,41 @@
 <!doctype html>
 <html lang="pt-BR">
   <head>
-   <script>(function(s){s.dataset.zone='10869374',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    <script>
+      (function (s) {
+        ((s.dataset.zone = "10869374"),
+          (s.src = "https://nap5k.com/tag.min.js"));
+      })(
+        [document.documentElement, document.body]
+          .filter(Boolean)
+          .pop()
+          .appendChild(document.createElement("script")),
+      );
+    </script>
 
-    <script>(function(s){s.dataset.zone='10869376',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-
+    <script>
+      (function (s) {
+        ((s.dataset.zone = "10869376"),
+          (s.src = "https://al5sm.com/tag.min.js"));
+      })(
+        [document.documentElement, document.body]
+          .filter(Boolean)
+          .pop()
+          .appendChild(document.createElement("script")),
+      );
+    </script>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Cronômetro online simples e rápido para iniciar, pausar e reiniciar diretamente no navegador."
+      content="Cronômetro online com temporizador de alarme e Pomodoro automático. Defina foco total, sessões de estudo e pausas direto no navegador, grátis e sem login."
     />
+    <meta
+      name="keywords"
+      content="cronometro online, temporizador online, pomodoro online, foco, estudo, produtividade"
+    />
+    <meta name="author" content="Cronometro Online" />
     <meta
       name="robots"
       content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
@@ -19,26 +43,31 @@
     <meta name="application-name" content="Cronômetro Online" />
     <meta name="theme-color" content="#0f172a" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <title>Cronômetro Online Simples | Iniciar, Pausar e Reiniciar</title>
+    <title>
+      Cronômetro, Temporizador e Pomodoro Online | Foco e Produtividade
+    </title>
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Cronometro Online" />
     <meta
       property="og:title"
-      content="Cronômetro Online Simples | Iniciar, Pausar e Reiniciar"
+      content="Cronômetro, Temporizador e Pomodoro Online"
     />
     <meta
       property="og:description"
-      content="Cronômetro online simples e rápido para iniciar, pausar e reiniciar diretamente no navegador."
+      content="Ferramenta online grátis para medir tempo: cronômetro, temporizador com alarme e Pomodoro automático com ciclos de estudo e descanso."
     />
+    <meta property="og:image" content="favicon.svg" />
     <meta name="twitter:card" content="summary" />
     <meta
       name="twitter:title"
-      content="Cronômetro Online Simples | Iniciar, Pausar e Reiniciar"
+      content="Cronômetro, Temporizador e Pomodoro Online"
     />
     <meta
       name="twitter:description"
-      content="Cronômetro online simples e rápido para iniciar, pausar e reiniciar diretamente no navegador."
+      content="Use cronômetro, temporizador com alarme e Pomodoro automático para estudar e manter o foco no navegador."
     />
+    <meta name="twitter:image" content="favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -49,43 +78,397 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Cronômetro Online",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Web",
-        "description": "Cronômetro online simples e rápido para iniciar, pausar e reiniciar diretamente no navegador."
+        "@graph": [
+          {
+            "@type": "WebApplication",
+            "name": "Cronometro Online",
+            "applicationCategory": "UtilitiesApplication",
+            "operatingSystem": "Web",
+            "inLanguage": "pt-BR",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "BRL"
+            },
+            "featureList": [
+              "Cronômetro online",
+              "Temporizador com alarme",
+              "Pomodoro automático",
+              "Controle de sessões de estudo e descanso"
+            ],
+            "description": "Ferramenta online gratuita com cronômetro, temporizador com alarme e Pomodoro para foco e produtividade."
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Como usar o temporizador com alarme?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Defina horas, minutos e segundos no temporizador e clique em Iniciar. Quando o tempo terminar, o alarme toca automaticamente."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Como funciona o Pomodoro automático?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Escolha o tempo total de foco, duração da sessão de estudo e pausa. O sistema alterna automaticamente entre estudo e descanso até completar a meta."
+                }
+              }
+            ]
+          }
+        ]
       }
     </script>
   </head>
   <body>
-    <h1 class="site-title">Cronometro Online</h1>
-
-    <main class="app" aria-label="Cronômetro online">
+    <header>
+      <h1 class="site-title">Cronometro Online</h1>
+    </header>
+    <main class="app" aria-label="Relógios online">
       <section class="timer-card">
-        <div class="timer-display" aria-live="polite" aria-atomic="true">
-          <span id="minutes">00</span>
-          <span class="timer-display__separator">:</span>
-          <span id="seconds">00</span>
-          <span class="timer-display__separator">.</span>
-          <span id="milliseconds">00</span>
-        </div>
-
-        <div class="controls">
-          <button class="btn btn--primary" id="startButton" type="button">
-            Iniciar
+        <nav class="tab-nav" aria-label="Modos">
+          <button
+            class="tab-nav__button is-active"
+            type="button"
+            data-tab="stopwatch"
+            aria-selected="true"
+          >
+            Cronômetro
           </button>
           <button
-            class="btn btn--secondary"
-            id="pauseButton"
+            class="tab-nav__button"
             type="button"
-            disabled
+            data-tab="timer"
+            aria-selected="false"
           >
-            Pausar
+            Temporizador
           </button>
-          <button class="btn btn--ghost" id="resetButton" type="button">
-            Reiniciar
+          <button
+            class="tab-nav__button"
+            type="button"
+            data-tab="pomodoro"
+            aria-selected="false"
+          >
+            Pomodoro
           </button>
-        </div>
+        </nav>
+
+        <section class="mode-panel is-active" id="panel-stopwatch">
+          <div class="timer-display" aria-live="polite" aria-atomic="true">
+            <span id="minutes">00</span>
+            <span class="timer-display__separator">:</span>
+            <span id="seconds">00</span>
+            <span class="timer-display__separator">.</span>
+            <span id="milliseconds">00</span>
+          </div>
+
+          <div class="controls">
+            <button class="btn btn--primary" id="startButton" type="button">
+              Iniciar
+            </button>
+            <button
+              class="btn btn--secondary"
+              id="pauseButton"
+              type="button"
+              disabled
+            >
+              Pausar
+            </button>
+            <button class="btn btn--ghost" id="resetButton" type="button">
+              Reiniciar
+            </button>
+          </div>
+        </section>
+
+        <section class="mode-panel" id="panel-timer">
+          <div class="input-grid" aria-label="Tempo do temporizador">
+            <label class="field-label" for="timerHours">
+              Horas
+              <span class="stepper">
+                <input
+                  id="timerHours"
+                  class="field-input field-input--stepper"
+                  type="number"
+                  min="0"
+                  max="99"
+                  value="0"
+                />
+                <span class="stepper__buttons" aria-hidden="true">
+                  <button
+                    class="stepper__button"
+                    type="button"
+                    data-target="timerHours"
+                    data-step="1"
+                    aria-label="Aumentar horas"
+                  >
+                    ▲
+                  </button>
+                  <button
+                    class="stepper__button"
+                    type="button"
+                    data-target="timerHours"
+                    data-step="-1"
+                    aria-label="Diminuir horas"
+                  >
+                    ▼
+                  </button>
+                </span>
+              </span>
+            </label>
+            <label class="field-label" for="timerMinutes">
+              Minutos
+              <span class="stepper">
+                <input
+                  id="timerMinutes"
+                  class="field-input field-input--stepper"
+                  type="number"
+                  min="0"
+                  max="59"
+                  value="5"
+                />
+                <span class="stepper__buttons" aria-hidden="true">
+                  <button
+                    class="stepper__button"
+                    type="button"
+                    data-target="timerMinutes"
+                    data-step="1"
+                    aria-label="Aumentar minutos"
+                  >
+                    ▲
+                  </button>
+                  <button
+                    class="stepper__button"
+                    type="button"
+                    data-target="timerMinutes"
+                    data-step="-1"
+                    aria-label="Diminuir minutos"
+                  >
+                    ▼
+                  </button>
+                </span>
+              </span>
+            </label>
+            <label class="field-label" for="timerSeconds">
+              Segundos
+              <span class="stepper">
+                <input
+                  id="timerSeconds"
+                  class="field-input field-input--stepper"
+                  type="number"
+                  min="0"
+                  max="59"
+                  value="0"
+                />
+                <span class="stepper__buttons" aria-hidden="true">
+                  <button
+                    class="stepper__button"
+                    type="button"
+                    data-target="timerSeconds"
+                    data-step="1"
+                    aria-label="Aumentar segundos"
+                  >
+                    ▲
+                  </button>
+                  <button
+                    class="stepper__button"
+                    type="button"
+                    data-target="timerSeconds"
+                    data-step="-1"
+                    aria-label="Diminuir segundos"
+                  >
+                    ▼
+                  </button>
+                </span>
+              </span>
+            </label>
+          </div>
+
+          <div
+            class="countdown-display countdown-display--split"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            <span id="timerHoursDisplay">00</span>
+            <span class="timer-display__separator">:</span>
+            <span id="timerMinutesDisplay">05</span>
+            <span class="timer-display__separator">:</span>
+            <span id="timerSecondsDisplay">00</span>
+          </div>
+
+          <p class="status-text" id="timerStatus">Defina o tempo e inicie.</p>
+
+          <div class="controls">
+            <button
+              class="btn btn--primary"
+              id="timerStartButton"
+              type="button"
+            >
+              Iniciar
+            </button>
+            <button
+              class="btn btn--secondary"
+              id="timerPauseButton"
+              type="button"
+              disabled
+            >
+              Pausar
+            </button>
+            <button class="btn btn--ghost" id="timerResetButton" type="button">
+              Reiniciar
+            </button>
+          </div>
+        </section>
+
+        <section class="mode-panel" id="panel-pomodoro">
+          <div
+            class="input-grid input-grid--pomodoro"
+            aria-label="Configuração do pomodoro"
+          >
+            <label class="field-label" for="pomoTotalHours">
+              Foco total (horas)
+              <span class="stepper">
+                <input
+                  id="pomoTotalHours"
+                  class="field-input field-input--stepper"
+                  type="number"
+                  min="0"
+                  max="24"
+                  value="2"
+                />
+                <span class="stepper__buttons" aria-hidden="true">
+                  <button
+                    class="stepper__button"
+                    type="button"
+                    data-target="pomoTotalHours"
+                    data-step="1"
+                    aria-label="Aumentar foco total em horas"
+                  >
+                    ▲
+                  </button>
+                  <button
+                    class="stepper__button"
+                    type="button"
+                    data-target="pomoTotalHours"
+                    data-step="-1"
+                    aria-label="Diminuir foco total em horas"
+                  >
+                    ▼
+                  </button>
+                </span>
+              </span>
+            </label>
+            <label class="field-label" for="pomoTotalMinutes">
+              Foco total (minutos)
+              <span class="stepper">
+                <input
+                  id="pomoTotalMinutes"
+                  class="field-input field-input--stepper"
+                  type="number"
+                  min="0"
+                  max="59"
+                  value="0"
+                />
+                <span class="stepper__buttons" aria-hidden="true">
+                  <button
+                    class="stepper__button"
+                    type="button"
+                    data-target="pomoTotalMinutes"
+                    data-step="1"
+                    aria-label="Aumentar foco total em minutos"
+                  >
+                    ▲
+                  </button>
+                  <button
+                    class="stepper__button"
+                    type="button"
+                    data-target="pomoTotalMinutes"
+                    data-step="-1"
+                    aria-label="Diminuir foco total em minutos"
+                  >
+                    ▼
+                  </button>
+                </span>
+              </span>
+            </label>
+          </div>
+
+          <div class="option-row" aria-label="Sessão de estudo">
+            <span class="option-row__label">Sessão</span>
+            <div class="option-buttons" id="pomoStudyOptions">
+              <button class="option-btn" type="button" data-study="20">
+                20 min
+              </button>
+              <button
+                class="option-btn is-active"
+                type="button"
+                data-study="25"
+              >
+                25 min
+              </button>
+              <button class="option-btn" type="button" data-study="30">
+                30 min
+              </button>
+              <button class="option-btn" type="button" data-study="40">
+                40 min
+              </button>
+              <button class="option-btn" type="button" data-study="50">
+                50 min
+              </button>
+              <button class="option-btn" type="button" data-study="60">
+                1 hora
+              </button>
+            </div>
+          </div>
+
+          <div class="option-row" aria-label="Sessão de pausa">
+            <span class="option-row__label">Descanso</span>
+            <div class="option-buttons" id="pomoBreakOptions">
+              <button class="option-btn is-active" type="button" data-break="5">
+                5 min
+              </button>
+              <button class="option-btn" type="button" data-break="10">
+                10 min
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="countdown-display countdown-display--split"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            <span id="pomoHoursDisplay">00</span>
+            <span class="timer-display__separator">:</span>
+            <span id="pomoMinutesDisplay">25</span>
+            <span class="timer-display__separator">:</span>
+            <span id="pomoSecondsDisplay">00</span>
+          </div>
+
+          <p class="status-text" id="pomoStatus">Pronto para iniciar o foco.</p>
+          <p class="status-text status-text--muted" id="pomoProgress">
+            Foco concluído: 00:00 / 02:00
+          </p>
+
+          <div class="controls">
+            <button class="btn btn--primary" id="pomoStartButton" type="button">
+              Iniciar
+            </button>
+            <button
+              class="btn btn--secondary"
+              id="pomoPauseButton"
+              type="button"
+              disabled
+            >
+              Pausar
+            </button>
+            <button class="btn btn--ghost" id="pomoResetButton" type="button">
+              Reiniciar
+            </button>
+          </div>
+        </section>
       </section>
     </main>
 
