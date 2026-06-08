@@ -130,6 +130,14 @@
           >
             Pomodoro
           </button>
+          <button
+            class="tab-nav__button"
+            type="button"
+            data-tab="brazilia"
+            aria-selected="false"
+          >
+            Brasília
+          </button>
         </nav>
 
         <section class="mode-panel is-active" id="panel-stopwatch">
@@ -443,6 +451,21 @@
             <button class="btn btn--ghost" id="pomoResetButton" type="button">
               Reiniciar
             </button>
+          </div>
+        </section>
+
+        <section class="mode-panel" id="panel-brazilia">
+          <p class="status-text status-text--muted">Horário de Brasília</p>
+          <div
+            class="countdown-display countdown-display--split brazilia-display"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            <span id="braziliaClockHour">00</span>
+            <span class="timer-display__separator">:</span>
+            <span id="braziliaClockMinute">00</span>
+            <span class="timer-display__separator">:</span>
+            <span id="braziliaClockSecond">00</span>
           </div>
         </section>
       </section>

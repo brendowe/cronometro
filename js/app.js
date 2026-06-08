@@ -2,6 +2,9 @@ const stopwatch = new Stopwatch();
 const minutesEl = document.querySelector("#minutes");
 const secondsEl = document.querySelector("#seconds");
 const millisecondsEl = document.querySelector("#milliseconds");
+const braziliaClockHourEl = document.querySelector("#braziliaClockHour");
+const braziliaClockMinuteEl = document.querySelector("#braziliaClockMinute");
+const braziliaClockSecondEl = document.querySelector("#braziliaClockSecond");
 const startButton = document.querySelector("#startButton");
 const pauseButton = document.querySelector("#pauseButton");
 const resetButton = document.querySelector("#resetButton");
@@ -11,6 +14,7 @@ const panels = {
   stopwatch: document.querySelector("#panel-stopwatch"),
   timer: document.querySelector("#panel-timer"),
   pomodoro: document.querySelector("#panel-pomodoro"),
+  brazilia: document.querySelector("#panel-brazilia"),
 };
 
 const timerHoursInput = document.querySelector("#timerHours");
@@ -45,9 +49,17 @@ const pomoBreakOptions = Array.from(
 );
 
 let animationFrameId = 0;
+let braziliaClockIntervalId = 0;
 const APP_MS_PER_SECOND = 1000;
 const APP_MS_PER_MINUTE = 60 * APP_MS_PER_SECOND;
 const APP_MS_PER_HOUR = 60 * APP_MS_PER_MINUTE;
+const BRAZILIA_TIME_FORMATTER = new Intl.DateTimeFormat("pt-BR", {
+  hour: "2-digit",
+  minute: "2-digit",
+  second: "2-digit",
+  hour12: false,
+  timeZone: "America/Sao_Paulo",
+});
 
 let audioContext;
 
@@ -259,6 +271,24 @@ function renderTime() {
   minutesEl.textContent = time.minutes;
   secondsEl.textContent = time.seconds;
   millisecondsEl.textContent = time.milliseconds;
+}
+
+function renderBraziliaClock() {
+  if (
+    !braziliaClockHourEl ||
+    !braziliaClockMinuteEl ||
+    !braziliaClockSecondEl
+  ) {
+    return;
+  }
+
+  const [hour, minute, second] = BRAZILIA_TIME_FORMATTER.format(
+    new Date(),
+  ).split(":");
+
+  braziliaClockHourEl.textContent = hour;
+  braziliaClockMinuteEl.textContent = minute;
+  braziliaClockSecondEl.textContent = second;
 }
 
 function renderStatus() {
@@ -755,6 +785,7 @@ window.addEventListener("beforeunload", () => {
   window.cancelAnimationFrame(animationFrameId);
   window.cancelAnimationFrame(timerState.animationFrameId);
   window.cancelAnimationFrame(pomodoroState.animationFrameId);
+  window.clearInterval(braziliaClockIntervalId);
 });
 
 timerState.durationMs = getTimerInputMilliseconds();
@@ -763,6 +794,9 @@ timerState.remainingMs = timerState.durationMs;
 pomodoroState.targetFocusMs = getPomodoroTargetMilliseconds();
 
 renderTime();
+renderBraziliaClock();
+window.clearInterval(braziliaClockIntervalId);
+braziliaClockIntervalId = window.setInterval(renderBraziliaClock, 1000);
 renderStatus();
 renderTimer();
 renderPomodoro();
